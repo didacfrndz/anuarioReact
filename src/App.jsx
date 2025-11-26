@@ -1,6 +1,10 @@
-import './App.css'
+
 import { SelectorPromocion } from './componentes/SelectorPromocion'
 import { ListaAlumnos } from './componentes/ListaAlumnos';
+import { Camera } from 'lucide-react';
+import { Trash } from 'lucide-react';
+import { Tractor } from 'lucide-react';
+import { Pencil } from 'lucide-react';
 function App() {
   const datosPromo=["24/25","24/25","25/26","26/27"];
  const datosAlumnos = [
@@ -26,12 +30,16 @@ function App() {
     url: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4433287.png"
   }
 ];
- alumunosFiltradosPromo = datosAlumnos.filter(al => al.Promo === "24/25");
   return (
     <>
-      <h1>Hola mundo</h1>
+      <h1 className='border p-5 shadow' >Hola mundo</h1>
+      <Camera color="black" size={18} />
+      <Trash color='black' size={18}/>
+      <Pencil size={18}/>
+      <Tractor color='yellow' size={100}/>
+
       <SelectorPromocion datosPromo={datosPromo}/>
-      <ListaAlumnos datosAlumnos={alumunosFiltradosPromo}/>
+      <ListaAlumnos datosAlumnos={datosAlumnos}/>
     </>
   )
 }
