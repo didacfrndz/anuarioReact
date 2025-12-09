@@ -1,14 +1,16 @@
+export function SelectorPromocion({ datosPromo, promocion, setPromocion }) {
 
-export function SelectorPromocion({datosPromo}){
-    console.log(datosPromo)
-    return(
+    const handleChange = (e) => {setPromocion(e.target.value);};
+    return (
         <div>
-            <select name="select" id="select">
-                <option value="" disabled selected>Seleccione un periodo</option>
-                {datosPromo.map((p,index)=>(
-                    <option value={p} key={index}>{p}</option>
+            <select value={promocion} onChange={handleChange} className="border p-2 rounded">
+                <option value="todos">Ver Todo</option>
+                {datosPromo.map((p, index) => (
+                    <option value={p} key={index}>
+                        {p}
+                    </option>
                 ))}
             </select>
         </div>
-    )
+    );
 }
